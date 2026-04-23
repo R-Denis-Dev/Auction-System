@@ -41,7 +41,7 @@ class RegisterUseCase:
             
             hashed = self._auth.hash_password(data.password)
             user = User(
-                id=UserID(0),
+                id=UserID,
                 email=email_vo,
                 password=HashedPassword(hashed),
                 role=UserRole.USER,

@@ -31,12 +31,6 @@ class JwtAuthService(IAuthService):
             "exp": now + expires_delta
         }
         return jwt.encode(payload, self._secret_key, algorithm=self._algorithm)
-    
-    def hash_password(self, plain_password: str) -> str:
-        raise NotImplementedError("Use PasswordHasher directly for hashing")
-
-    def verify_password(self, plain_password: str, hashed_password: str) -> bool:
-        raise NotImplementedError("Use PasswordHasher directly for verifying")
 
     def create_access_token(self, user: User) -> str:
         return self._create_token(user, timedelta(minutes=self._access_exp))
