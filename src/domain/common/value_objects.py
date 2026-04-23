@@ -16,7 +16,6 @@ class Email:
         if not self.email_pattern:
             raise ValueError(f"Invalid email: {self.value!r}")
 
-
     def __str__(self):
         return self.value
     
