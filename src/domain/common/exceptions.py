@@ -1,0 +1,9 @@
+from __future__ import annotations
+
+
+class DomainError(ValueError): ...
+
+class ValidationError(ValueError): ...
+
+class AuthError(ValueError): ...
+    
