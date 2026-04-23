@@ -3,8 +3,8 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Protocol
 
-from domain.users.entities import User
-from domain.common.value_objects import (
+from src.domain.users.entities import User
+from src.domain.common.value_objects import (
     Email, UserID
 )
 

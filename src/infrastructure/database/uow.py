@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from application.interfaces.unit_of_work import IUnitOFWork
-from application.interfaces.repositories.users import IUserRepository
-from infrastructure.database.repositories.users import UserRepository
+from src.application.interfaces.unit_of_work import IUnitOFWork
+from src.application.interfaces.repositories.users import IUserRepository
+from src.infrastructure.database.repositories.users import UserRepository
 
 
 

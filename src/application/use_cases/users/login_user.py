@@ -2,11 +2,11 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from application.interfaces.auth import IAuthService
-from application.interfaces.unit_of_work import IUnitOFWork
-from domain.common.exceptions import AuthError
-from domain.common.value_objects import Email
-from domain.users.entities import User
+from src.application.interfaces.auth import IAuthService
+from src.application.interfaces.unit_of_work import IUnitOFWork
+from src.domain.common.exceptions import AuthError
+from src.domain.common.value_objects import Email
+from src.domain.users.entities import User
 
 
 @dataclass

@@ -4,14 +4,14 @@ from typing import Any
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from application.interfaces.repositories.users import IUserRepository
-from domain.common.value_objects import (
+from src.application.interfaces.repositories.users import IUserRepository
+from src.domain.common.value_objects import (
     Email,
     HashedPassword,
     UserID
 )
-from domain.users.entities import User, UserRole
-from infrastructure.database.models.user import UserModel
+from src.domain.users.entities import User, UserRole
+from src.infrastructure.database.models.user import UserModel
 
 
 class UserRepository(IUserRepository):

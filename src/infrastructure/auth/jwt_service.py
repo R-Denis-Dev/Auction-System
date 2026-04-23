@@ -5,8 +5,8 @@ from typing import Any, Dict
 
 import jwt
 
-from application.interfaces.auth import IAuthService
-from domain.users.entities import User
+from src.application.interfaces.auth import IAuthService
+from src.domain.users.entities import User
 
 
 class JwtAuthService(IAuthService):

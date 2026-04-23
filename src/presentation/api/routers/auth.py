@@ -2,21 +2,21 @@ from __future__ import annotations
 
 from fastapi import APIRouter, Depends, status
 
-from application.use_cases.users.register_user import (
+from src.application.use_cases.users.register_user import (
     RegisterUserInput,
     RegisterUserOutput,
     RegisterUseCase,
 )
-from application.use_cases.users.login_user import (
+from src.application.use_cases.users.login_user import (
     LoginUserInput,
     LoginUserOutput,
     LoginUseCase,
 )
-from infrastructure.auth.jwt_service import JwtAuthService
-from infrastructure.auth.password_hasher import PasswordHasher
-from infrastructure.database.config import get_session
-from infrastructure.database.uow import SqlAlchemyUnitOfWork
-from presentation.schemas.auth import (
+from src.infrastructure.auth.jwt_service import JwtAuthService
+from src.infrastructure.auth.password_hasher import PasswordHasher
+from src.infrastructure.database.config import get_session
+from src.infrastructure.database.uow import SqlAlchemyUnitOfWork
+from src.presentation.schemas.auth import (
     RegisterRequest,
     RegisterResponse,
     LoginRequest,

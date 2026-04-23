@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from abc import ABC , abstractmethod
 
-from application.interfaces.repositories.users import IUserRepository
+from src.application.interfaces.repositories.users import IUserRepository
 
 
 class IUnitOFWork(ABC):

@@ -5,8 +5,8 @@ from datetime import datetime
 from sqlalchemy import Boolean, DateTime, Enum, Integer, String
 from sqlalchemy.orm import Mapped, mapped_column
 
-from infrastructure.database.config import Base
-from domain.users.entities import UserRole
+from src.infrastructure.database.config import Base
+from src.domain.users.entities import UserRole
 
 
 class UserModel(Base):

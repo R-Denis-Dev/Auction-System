@@ -3,13 +3,13 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime, timezone
 
-from application.interfaces.auth import IAuthService
-from application.interfaces.unit_of_work import IUnitOFWork
-from domain.common.exceptions import ValidationError
-from domain.common.value_objects import (
+from src.application.interfaces.auth import IAuthService
+from src.application.interfaces.unit_of_work import IUnitOFWork
+from src.domain.common.exceptions import ValidationError
+from src.domain.common.value_objects import (
     UserID, HashedPassword, Email
 )
-from domain.users.entities import (
+from src.domain.users.entities import (
     User, UserRole
 )
 

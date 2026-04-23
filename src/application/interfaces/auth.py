@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from abc import ABC, abstractmethod
 
-from domain.users.entities import User
+from src.domain.users.entities import User
 
 
 class IAuthService(ABC):

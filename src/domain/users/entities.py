@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from datetime import datetime
 from enum import Enum
 
-from domain.common.value_objects import (
+from src.domain.common.value_objects import (
     Email,
     HashedPassword,
     UserID
