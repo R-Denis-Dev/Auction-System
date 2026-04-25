@@ -5,7 +5,8 @@ import asyncio
 from sqlalchemy.ext.asyncio import AsyncEngine
 
 from src.infrastructure.database.config import Base, engine
-from src.infrastructure.database.models import user  # важно, чтобы модель импортировалась
+from src.infrastructure.database.models import user, lot, bid  # важно, чтобы модель импортировалась
+
 
 
 async def init_models(engine: AsyncEngine) -> None:

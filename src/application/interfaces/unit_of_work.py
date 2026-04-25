@@ -3,10 +3,14 @@ from __future__ import annotations
 from abc import ABC , abstractmethod
 
 from src.application.interfaces.repositories.users import IUserRepository
+from src.application.interfaces.repositories.lots import ILotRepository
+from src.application.interfaces.repositories.bids import IBidRepository
 
 
 class IUnitOFWork(ABC):
-    users:IUserRepository
+    users: IUserRepository
+    lots: ILotRepository
+    bids: IBidRepository
 
     async def __aenter__(self):
         return self

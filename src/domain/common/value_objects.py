@@ -50,7 +50,7 @@ class UserId:
     
 
 @dataclass(frozen=True , slots=True)
-class LotID:
+class LotId:
     value:int
 
     def __post_init__(self) -> None:
@@ -59,13 +59,13 @@ class LotID:
         if self.value <= 0:
             raise ValueError("LotID must be positive")
         
-    def __init__(self):
+    def __int__(self):
         return self.value
     
 
 
 @dataclass(frozen=True , slots=True)
-class BidID:
+class BidId:
     value:int
 
     def __post_init__(self) -> None:
@@ -74,5 +74,5 @@ class BidID:
         if self.value <= 0:
             raise ValueError("BidID must be positive")
         
-    def __init__(self):
+    def __int__(self):
         return self.value
