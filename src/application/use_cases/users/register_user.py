@@ -7,7 +7,7 @@ from src.application.interfaces.auth import IAuthService
 from src.application.interfaces.unit_of_work import IUnitOFWork
 from src.domain.common.exceptions import ValidationError
 from src.domain.common.value_objects import (
-    UserID, HashedPassword, Email
+    UserId, HashedPassword, Email
 )
 from src.domain.users.entities import (
     User, UserRole
@@ -23,7 +23,7 @@ class RegisterUserInput:
 class RegisterUserOutput:
     id:int
     email:str
-    password:str
+    role:str
 
 
 class RegisterUseCase:
@@ -41,7 +41,7 @@ class RegisterUseCase:
             
             hashed = self._auth.hash_password(data.password)
             user = User(
-                id=UserID,
+                id=UserId,
                 email=email_vo,
                 password=HashedPassword(hashed),
                 role=UserRole.USER,

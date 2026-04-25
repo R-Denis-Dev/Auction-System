@@ -12,7 +12,7 @@ from src.application.use_cases.users.login_user import (
     LoginUserOutput,
     LoginUseCase,
 )
-from src.infrastructure.auth.jwt_service import JwtAuthService
+from src.infrastructure.auth.auth_service import AuthService
 from src.infrastructure.auth.password_hasher import PasswordHasher
 from src.infrastructure.database.config import get_session
 from src.infrastructure.database.uow import SqlAlchemyUnitOfWork
@@ -26,8 +26,8 @@ from src.presentation.schemas.auth import (
 router = APIRouter(prefix="/auth", tags=["auth"])
 
 
-def get_auth_service() -> JwtAuthService:
-    return JwtAuthService(secret_key="Secret key for secret app with slots")
+def get_auth_service() -> AuthService:
+    return AuthService(secret_key="Secret key for secret app with slots")
 
 
 def get_password_hasher() -> PasswordHasher:
@@ -36,7 +36,7 @@ def get_password_hasher() -> PasswordHasher:
 
 async def get_register_use_case(
     session=Depends(get_session),
-    auth_service: JwtAuthService = Depends(get_auth_service),
+    auth_service: AuthService = Depends(get_auth_service),
     password_hasher: PasswordHasher = Depends(get_password_hasher),
 ) -> RegisterUseCase:
     uow = SqlAlchemyUnitOfWork(session)
@@ -45,7 +45,7 @@ async def get_register_use_case(
 
 async def get_login_use_case(
     session=Depends(get_session),
-    auth_service: JwtAuthService = Depends(get_auth_service),
+    auth_service: AuthService = Depends(get_auth_service),
     password_hasher: PasswordHasher = Depends(get_password_hasher),
 ) -> LoginUseCase:
     uow = SqlAlchemyUnitOfWork(session)

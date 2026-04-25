@@ -12,7 +12,7 @@ def create_app() -> FastAPI:
 
     setup_routers(app)
 
-    @app.get("/", tags=["health"])
+    @app.get("/", tags=["test"])
     async def root() -> dict[str, str]:
         return {"message": "Auction API is running"}
 

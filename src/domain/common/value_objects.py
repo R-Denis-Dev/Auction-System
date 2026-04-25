@@ -37,16 +37,14 @@ class HashedPassword:
 
 
 @dataclass(frozen=True , slots=True)
-class UserID:
+class UserId:
     value:int
 
     def __post_init__(self) -> None:
         if not isinstance(self.value, int):
             raise ValueError("UserId must be a int")
-        if self.value <= 0:
-            raise ValueError("UserId must be positive")
         
-    def __init__(self):
+    def __int__(self):
         return self.value
     
     

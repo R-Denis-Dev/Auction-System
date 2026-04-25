@@ -5,7 +5,7 @@ from enum import Enum
 from src.domain.common.value_objects import (
     Email,
     HashedPassword,
-    UserID
+    UserId
 )
 
 
@@ -16,7 +16,7 @@ class UserRole(str, Enum):
 
 @dataclass(slots=True)
 class User:
-    id:UserID
+    id:UserId
     email:Email
     password:HashedPassword
     role:UserRole

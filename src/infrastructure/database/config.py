@@ -10,17 +10,17 @@ from sqlalchemy.ext.asyncio import (
 from sqlalchemy.orm import DeclarativeBase
 
 
-DATABASE_URL = "postgresql+asyncpg://user:password@db:5432/app"
+DATABASE_URL = "sqlite+aiosqlite:///./dev.db"
 
 
 class Base(DeclarativeBase):
-    pass 
+    pass
 
 
 engine = create_async_engine(
     DATABASE_URL,
     echo=False,
-    future=True
+    future=True,
 )
 
 AsyncSessionFactory = async_sessionmaker(
@@ -28,6 +28,7 @@ AsyncSessionFactory = async_sessionmaker(
     expire_on_commit=False,
     class_=AsyncSession,
 )
+
 
 async def get_session() -> AsyncGenerator[AsyncSession, None]:
     async with AsyncSessionFactory() as session:

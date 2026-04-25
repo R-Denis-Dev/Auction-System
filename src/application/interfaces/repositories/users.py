@@ -5,12 +5,12 @@ from typing import Protocol
 
 from src.domain.users.entities import User
 from src.domain.common.value_objects import (
-    Email, UserID
+    Email, UserId
 )
 
 class IUserRepository(Protocol):
     @abstractmethod
-    async def get_by_id(self, user_id:UserID) -> User | None: ...
+    async def get_by_id(self, user_id:UserId) -> User | None: ...
     @abstractmethod
     async def get_by_email(self, email:Email) -> User | None: ...
     @abstractmethod
